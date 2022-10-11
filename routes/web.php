@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Auth\Events\Login;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::get('/login', [AuthController::class, 'login']);
+Route::post('login', [AuthController::class, 'logincheck']);
+
+Route::get('/register', [AuthController::class, 'registrasi']);
+Route::post('/register', [AuthController::class, 'registrasicheck']);

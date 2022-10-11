@@ -10,6 +10,8 @@
     
     <div class="container">
         <h1>Welcome</h1>
+        <p><a href="/login">login</a></p>
+        <p><a href="/register">registrasi</a></p>
     </div>
 
 </body>
